@@ -23,7 +23,6 @@ function App() {
   let routers = createBrowserRouter([
     {path:'', element:<Layout/>,children:[
       {path:'', element:<Navigate to={'home'}/>},
-      {path:'/FreshCart',element:<Home/>},
       {path:'/home',element:<Home/>},
       {path:'/login',element:<ProtectedLogIn><Login/></ProtectedLogIn>},
       {path:'/register',element:<ProtectedLogIn><Register/></ProtectedLogIn>},
@@ -38,7 +37,7 @@ function App() {
       {path:'/about-us',element:<AboutUs/>},
       {path:'*',element:<NotFound/>},
     ]}
-  ])
+  ],{ basename: '/FreshCart' })
 
   return (
     <AuthContextProvider>
